@@ -1,0 +1,107 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Coke",
+      "description": "Ice cold",
+      "category": "Beverages",
+      "price": 20,
+      "quantity": 50,
+      "image": "coke.jpeg"
+    },
+    {
+      "id": 2,
+      "name": "Makwenya",
+      "description": "Hot",
+      "category": "Food",
+      "price": 1,
+      "quantity": 50,
+      "image": "Makoenya.jpg"
+    },
+    {
+      "id": 4,
+      "name": "sprite",
+      "description": "cold",
+      "category": "drinks",
+      "price": 20,
+      "quantity": 41,
+      "image": "sprite.jpeg"
+    },
+    {
+      "id": 5,
+      "name": "chicken",
+      "description": "Hot",
+      "category": "Food",
+      "price": 30,
+      "quantity": 2,
+      "image": "chicken.jpeg"
+    },
+    {
+      "id": 6,
+      "name": "GoSlo's",
+      "description": "Crispy",
+      "category": "snack",
+      "price": 7,
+      "quantity": 26,
+      "image": "Goslo.jpeg"
+    }
+  ],
+  "sales": [
+    {
+      "id": 1,
+      "items": [
+        {
+          "productId": 1,
+          "qty": 3,
+          "unitPrice": 20
+        }
+      ],
+      "timestamp": "2025-09-12T03:32:08.382Z"
+    },
+    {
+      "id": 2,
+      "items": [
+        {
+          "productId": 4,
+          "qty": 5,
+          "unitPrice": 20
+        }
+      ],
+      "timestamp": "2025-09-12T12:24:16.794Z"
+    },
+    {
+      "id": 3,
+      "items": [
+        {
+          "productId": 4,
+          "qty": 3,
+          "unitPrice": 20
+        }
+      ],
+      "timestamp": "2025-09-12T14:56:16.444Z"
+    },
+    {
+      "id": 4,
+      "items": [
+        {
+          "productId": 6,
+          "qty": 4,
+          "unitPrice": 7
+        }
+      ],
+      "timestamp": "2025-09-12T15:06:53.833Z"
+    },
+    {
+      "id": 5,
+      "items": [
+        {
+          "productId": 4,
+          "name": "sprite",
+          "unitPrice": 20,
+          "qty": 1
+        }
+      ],
+      "timestamp": "2025-09-12T17:05:01.946Z"
+    }
+  ]
+}
