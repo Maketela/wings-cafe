@@ -104,6 +104,33 @@ app.post("/api/sales", (req, res) => {
   res.json(sale);
 });
 
+// Add a new product
+app.post("/api/products", (req, res) => {
+  try {
+    const db = readDB();
+
+    const newId = db.products.length > 0 ? Math.max(...db.products.map(p => p.id)) + 1 : 1;
+    const newProduct = {
+      id: newId,
+      name: req.body.name || "Untitled Product",
+      description: req.body.description || "",
+      category: req.body.category || "Uncategorized",
+      price: Number(req.body.price) || 0,
+      quantity: Number(req.body.quantity) || 0,
+      image: req.body.image || "https://via.placeholder.com/150?text=No+Image",
+    };
+
+    db.products.push(newProduct);
+    writeDB(db);
+
+    res.status(201).json(newProduct);
+  } catch (err) {
+    console.error("Error adding product:", err);
+    res.status(500).json({ error: err.message });
+  }
+});
+
+
 app.put("/api/products/:id", (req, res) => {
   try {
     const db = readDB();
