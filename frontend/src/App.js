@@ -271,36 +271,62 @@ function Reports() {
 
   return (
     <div className="reports">
-      <h2>Reports</h2>
-      {error ? (
-        <div className="error">Failed to load reports: {error}</div>
-      ) : (
-        <div className="report-summary">
-          <h3>Total revenue: LSL {data.totalRevenue.toFixed(2)}</h3>
-          <h4>Top selling</h4>
-          <ol>
-            {data.topSelling.map((t) => (
-              <li key={t.productId}>
-                {t.name} — {t.qty} sold — LSL {t.revenue.toFixed(2)}
-              </li>
-            ))}
-          </ol>
-          <h4>Revenue by item</h4>
-          <table>
-            <thead><tr><th>Name</th><th>Qty sold</th><th>Revenue (LSL)</th></tr></thead>
-            <tbody>
-              {data.report.map((r) => (
-                <tr key={r.productId}>
-                  <td>{r.name}</td>
-                  <td>{r.qty}</td>
-                  <td>LSL {r.revenue.toFixed(2)}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      )}
-    </div>
+  <h2>Reports</h2>
+  {error ? (
+    <div className="error">Failed to load reports: {error}</div>
+  ) : (
+    <>
+      {/* Total Revenue as big text */}
+      <div className="total-revenue">
+        Total Revenue: LSL {data.totalRevenue.toFixed(2)}
+      </div>
+
+      {/* Top Selling Table */}
+      <h4>Top Selling Items</h4>
+      <table>
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Qty Sold</th>
+            <th>Revenue (LSL)</th>
+          </tr>
+        </thead>
+        <tbody>
+          {data.topSelling.map((t) => (
+            <tr key={t.productId}>
+              <td>{t.name}</td>
+              <td>{t.qty}</td>
+              <td>LSL {t.revenue.toFixed(2)}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
+      {/* Revenue by Item Table */}
+      <h4 style={{ marginTop: "30px" }}>Revenue by Item</h4>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Qty Sold</th>
+            <th>Revenue (LSL)</th>
+          </tr>
+        </thead>
+        <tbody>
+          {data.report.map((r) => (
+            <tr key={r.productId}>
+              <td>{r.name}</td>
+              <td>{r.qty}</td>
+              <td>LSL {r.revenue.toFixed(2)}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </>
+  )}
+</div>
+
+
   );
 }
 
